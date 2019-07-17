@@ -1,0 +1,24 @@
+{
+  "name": "jitsimeetapi",
+  "version": "1.0.0",
+  "description": "Video Call Site Using Jitsi-Meet API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sodavinchheng/JitsiMeetAPI.git"
+  },
+  "author": "Sodavin Chheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sodavinchheng/JitsiMeetAPI/issues"
+  },
+  "homepage": "https://github.com/sodavinchheng/JitsiMeetAPI#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
