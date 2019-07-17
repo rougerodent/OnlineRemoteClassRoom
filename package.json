@@ -1,7 +1,7 @@
 {
-  "name": "jitsimeetapi",
+  "name": "onlineremoteclassroom",
   "version": "1.0.0",
-  "description": "Video Call Site Using Jitsi-Meet API",
+  "description": "Online Remote Classroom",
   "main": "app.js",
   "scripts": {
     "start": "node app",
@@ -9,15 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sodavinchheng/JitsiMeetAPI.git"
+    "url": "git+https://github.com/rougerodent/OnlineRemoteClassRoom.git"
   },
-  "author": "Sodavin Chheng",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sodavinchheng/JitsiMeetAPI/issues"
+    "url": "https://github.com/rougerodent/OnlineRemoteClassRoom/issues"
   },
-  "homepage": "https://github.com/sodavinchheng/JitsiMeetAPI#readme",
-  "dependencies": {},
+  "homepage": "https://github.com/rougerodent/OnlineRemoteClassRoom#readme",
   "devDependencies": {
     "nodemon": "^1.19.1"
   }
