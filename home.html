@@ -10,16 +10,29 @@
     <script>
       function enterRoom(){
         var roomname = document.getElementById("roomName").value;
-        // var username = document.getElementById("userName").value;
-        localStorage.setItem("roomname",roomname);
-        // localStorage.setItem("username",username);
-        location.href = "http://localhost:5000/";
+        if (roomname !== ""){
+          localStorage.setItem("roomname",roomname);
+          location.href = "http://localhost:5000/";
+        }
+        else{
+          noRoomNumber();
+        }
       }
+      function noRoomNumber(){
+        var err = document.createElement("div");
+        err.innerHTML = "Please Enter A Room Name";
+        var attr = document.createAttribute("class");
+        attr.value = "error";
+        err.setAttributeNode(attr);
+        document.body.appendChild(err);
+      }
+      // var username = document.getElementById("userName").value;
+      // localStorage.setItem("username",username);
     </script>
 </head>
 <body>
     <div class="main card container">
-    <form>
+    <form autocomplete="off">
         <div class="mybox">
       <div class="form-group">
           <label for="exampleInputEmail1">Room Name</label>
