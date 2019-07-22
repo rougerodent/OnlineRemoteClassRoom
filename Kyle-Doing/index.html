@@ -15,6 +15,7 @@
     <script>
         $(document).ready(function(){
             var data = localStorage.getItem('roomname').split("~");
+            document.getElementById("username").value = data[1]
             var domain = "meet.jit.si";
             var options = {
                 roomName: data[0],
@@ -47,6 +48,7 @@
             toggleAudio: []
         });
             api.executeCommand('displayName', data[1]);
+            
         });
         
     </script>
