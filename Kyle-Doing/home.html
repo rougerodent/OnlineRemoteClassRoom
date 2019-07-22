@@ -10,8 +10,9 @@
     <script>
       function enterRoom(){
         var roomname = document.getElementById("roomName").value;
-        if (roomname !== ""){
-          localStorage.setItem("roomname",roomname);
+        var user = document.getElementById("userName").value;
+        if (roomname !== "" && user !== ""){
+          localStorage.setItem("roomname",roomname+"~"+user);
           location.href = "./index.html";
         }
         else{
