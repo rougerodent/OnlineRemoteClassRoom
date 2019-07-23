@@ -97,9 +97,9 @@
     var messages = element('messages');
     var textarea = element('textarea');
     var username = element('username');
-    var clearBtn = element('clearbutt');
     var role = element('role_select');
     var room = element('room_select');
+    var credentials = localStorage.getItem('roomname').split("~");
 
     //Get default status
     var statusDefault = status.textContent;
@@ -117,7 +117,7 @@
 
     //connect to socket.io
     var socket = io.connect('https://guarded-bastion-83697.herokuapp.com/');
-    socket.emit('room_selection',room.value);
+    socket.emit('room_selection',credentials[0]);
     //check for connection
     if (socket != undefined){
         console.log("Connected to socket.io .....");
