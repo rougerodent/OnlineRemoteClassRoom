@@ -2,10 +2,10 @@
   "name": "onlineremoteclassroom",
   "version": "1.0.0",
   "description": "Online Remote Classroom",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app",
-    "dev": "nodemon app"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
