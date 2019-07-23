@@ -128,25 +128,28 @@
                 console.log(data)
                 for(var x = 0; x < data.length; x++){
                     //Build out msg div
-                    var message = document.createElement('span');
-                    var uname = document.createElement('span');
-                    var timestamp = document.createElement('div');
-                    timestamp.setAttribute('class','timestamp text-dark');
-                    message.setAttribute('class','chat-message rounded-bottom');
-                    uname.setAttribute('class',`chat-head-${data[x].role} rounded-top`);
-                    message.textContent = data[x].message;
-                    uname.textContent = `(${data[x].role}) - ${data[x].name} :   `;
-                    timestamp.textContent = '06:04';
-                    if (messages.scrollTop + messages.clientHeight == messages.scrollHeight){
-                        messages.appendChild(uname);
-                        messages.appendChild(message);
-                        messages.appendChild(timestamp)
-                        messages.scrollTop = messages.scrollHeight;
-                    }else{
-                        messages.appendChild(uname);
-                        messages.appendChild(message);
-                        messages.appendChild(timestamp)
+                    if (data[x].room == credentials[0]){
+                        var message = document.createElement('span');
+                        var uname = document.createElement('span');
+                        var timestamp = document.createElement('div');
+                        timestamp.setAttribute('class','timestamp text-dark');
+                        message.setAttribute('class','chat-message rounded-bottom');
+                        uname.setAttribute('class',`chat-head-${data[x].role} rounded-top`);
+                        message.textContent = data[x].message;
+                        uname.textContent = `(${data[x].role}) - ${data[x].name} :   `;
+                        timestamp.textContent = '06:04';
+                        if (messages.scrollTop + messages.clientHeight == messages.scrollHeight){
+                            messages.appendChild(uname);
+                            messages.appendChild(message);
+                            messages.appendChild(timestamp)
+                            messages.scrollTop = messages.scrollHeight;
+                        }else{
+                            messages.appendChild(uname);
+                            messages.appendChild(message);
+                            messages.appendChild(timestamp)
+                        }
                     }
+
                     // messages.insertBefore(message,messages.firstChild);
                 }
                 
@@ -154,16 +157,16 @@
         });
 
        //Get status from server
-       socket.on('status', function(data){
-            // get message status
-            setStatus(data);
-       });
+    //    socket.on('status', function(data){
+    //         // get message status
+    //         setStatus(data);
+    //    });
 
        //Handle input
        textarea.addEventListener('keydown',function(event){
            if (event.which === 13 && event.shiftKey == false){
             //emit to server input
-            socket.emit('input',{name:username.value,message:textarea.value,role:role.value});
+            socket.emit('input',{name:username.value,message:textarea.value,role:role.value,room:credentials[0]});
             textarea.value = ''
             event.preventDefault();
            }
