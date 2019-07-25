@@ -5,36 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Homepage</title>
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
     <script src="./app.js"></script>
+    <script src="./date.js"></script>
 </head>
 <body>
     <div class="main card container">
         <form autocomplete="off">
             <div class="mybox">
-                <!-- <div class="form-group">
-                    <label>Room Name</label>
-                    <input class="form-control" id="roomName" placeholder="Enter The Room Name">
-                    <small class="form-text text-muted">You'll enter a room with the specified room name, otherwise a new room will be created.</small>
-                </div> -->
-
-                <select required id="batch_select" class="browser-default custom-select text-dark font-weight-bold mybox">
+                <select required id="batch_select" class="mybox select">
                     <option value="" selected disabled hidden>Select Your Batch</option>
                     <option value="B6-A">Batch 6 Section A</option>
                     <option value="B6-B">Batch 6 Section B</option>
                     <option value="B6-C">Batch 6 Section C</option>
-                    <!-- <option value="AR-R001">Admin Room</option> -->
                 </select>
 
-                <select required id="role_select" class="browser-default custom-select text-dark font-weight-bold mybox">
+                <select required id="role_select" class="mybox select">
                     <option value="" selected disabled hidden>Select Your Role</option>
                     <!-- <option value="Admin">Admin</option> -->
                     <option value="Lecturer">Lecturer</option>
                     <option value="Student">Student</option>
                 </select>
 
-                <select required id="subject_select" class="browser-default custom-select text-dark font-weight-bold mybox">
+                <select required id="subject_select" class="mybox select">
                     <option value="" selected disabled hidden>Select A Subject</option>
                     <option value="BusEng">Business English</option>
                     <option value="CT">Critical Thinking & Study Skills</option>
@@ -45,11 +39,9 @@
                     <option value="Economics">Principle of Economics</option>
                 </select>
 
-                <div class="form-group">
-                    <!-- <label>Username</label> -->
-                    <input type="text" class="form-control mybox" id="userName" placeholder="Enter Your Username">
-                </div>
-                <button type="button" onclick="enterCallRoom()" class="btn btn-primary">Enter The Room</button>
+                <input type="text" placeholder="Enter your username" class="select mybox" id="usernameInput">
+
+                <button type="button" onclick="enterCall()" class="btn btn-primary">Enter Call</button>
             </div>
         </form>
     </div>

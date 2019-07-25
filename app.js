@@ -1,33 +1,41 @@
-const date = require("./date.js");
-
-function element(id){
-    document.getElementById(id);
-}
-var batch = element("batch_select");
-var role = element("role_select");
-var subject = element("subject_select");
-
-function enterCallRoom(){
-    var username = document.getElementById("userName").value;
-    if (username == "" || batch.value == "" || role.value == "" || subject.value ==  ""){
-        missingField();
+function enterCall(){
+    var username = document.getElementById("usernameInput").value;
+    var batch = document.getElementById("batch_select").value;
+    var role = document.getElementById("role_select").value;
+    var subject = document.getElementById("subject_select").value;
+    var roomname = batch + "_" + subject + "_" + fullDate;
+    if(username !== "" && batch !== "" && role !== "" && subject !== ""){
+        localStorage.setItem("roomname",roomname);
+        localStorage.setItem("username",username);
+        if(role == "Lecturer"){
+            location.href = "./lecturer.html";   
+        }
+        else if(role == "Student"){
+            location.href = "./student.html";
+        }
     }
     else{
-        localStorage.setItem("username",username);
-        location.href = "./lecturer.html";
-        var room = document.getElementById("room_select").value;
+        missingUsername();
     }
 }
-function missingField(){
+
+function missingUsername(){
     var err = document.createElement("div");
-    err.innerHTML = "Please Input The Missing Fields";
+    err.innerHTML = "**Please Select All Required Fields";
     var attr = document.createAttribute("class");
     attr.value = "error";
     err.setAttributeNode(attr);
     document.body.appendChild(err);
-
-    //Below Are For Testing Purposes Only And Will Be Deleted Later
-
-    var room = document.getElementById("room_select").value;
-    console.log(room);
+    var username = document.getElementById("usernameInput").value;
+    var batch = document.getElementById("batch_select").value;
+    var role = document.getElementById("role_select").value;
+    var subject = document.getElementById("subject_select").value;
+    if(username == "")
+        document.getElementById("usernameInput").className += " error";
+    if(batch == "")
+        document.getElementById("batch_select").className += " error";
+    if(role == "")
+        document.getElementById("role_select").className += " error";
+    if(subject == "")
+        document.getElementById("subject_select").className += " error";
 }

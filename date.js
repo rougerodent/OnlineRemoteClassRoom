@@ -1,4 +1,4 @@
-var date = new Date();
+const date = new Date();
 var month = "";
 switch(date.getMonth()+1){
     case 1:
@@ -40,4 +40,4 @@ switch(date.getMonth()+1){
 }
 const fullDate = date.getFullYear().toString()+"-"+month+"-"+date.getDate().toString();
 
-module.exports = fullDate;
+// localStorage.setItem("currentDate",fullDate);
